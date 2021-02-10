@@ -293,11 +293,6 @@ function createPullRequest(inputs) {
                 ? inputs.pushToFork
                 : baseRemote.repository;
             if (inputs.pushToFork) {
-                // Check if the supplied fork is really a fork of the base
-                const parentRepository = yield githubHelper.getRepositoryParent(branchRepository);
-                if (parentRepository != baseRemote.repository) {
-                    throw new Error(`Repository '${branchRepository}' is not a fork of '${baseRemote.repository}'. Unable to continue.`);
-                }
                 // Add a remote for the fork
                 const remoteUrl = utils.getRemoteUrl(baseRemote.protocol, branchRepository);
                 yield git.exec(['remote', 'add', 'fork', remoteUrl]);
@@ -7597,7 +7592,7 @@ module.exports = require("zlib");;
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __nccwpck_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -7610,7 +7605,7 @@ module.exports = require("zlib");;
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		var threw = true;
 /******/ 		try {
@@ -7619,11 +7614,11 @@ module.exports = require("zlib");;
 /******/ 		} finally {
 /******/ 			if(threw) delete __webpack_module_cache__[moduleId];
 /******/ 		}
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -7636,7 +7631,7 @@ module.exports = require("zlib");;
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -7648,12 +7643,12 @@ module.exports = require("zlib");;
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__nccwpck_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -7664,9 +7659,9 @@ module.exports = require("zlib");;
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/compat */
-/******/ 	
+/******/
 /******/ 	__nccwpck_require__.ab = __dirname + "/";/************************************************************************/
 /******/ 	// module exports must be returned from runtime so entry inlining is disabled
 /******/ 	// startup
